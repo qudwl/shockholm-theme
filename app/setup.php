@@ -124,6 +124,15 @@ add_action('after_setup_theme', function () {
         'style',
     ]);
 
+    add_theme_support('custom-logo', [
+        'height' => 50,
+        'width' => 240,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array('site-title', 'site-description'),
+        'unlink-homepage-logo' => false,
+    ]);
+
     /**
      * Enable selective refresh for widgets in customizer.
      *
