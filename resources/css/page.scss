@@ -1,0 +1,45 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+.page-landing-section {
+  height: 800px;
+  max-height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: $font-display;
+    font-size: $font-size-xxl;
+    color: $color-orange;
+    padding: $spacing-m;
+    margin: 0;
+    text-align: center;
+    max-width: min($max-screen-width, 100%);
+    box-sizing: border-box;
+    -webkit-text-stroke: 1px $color-text-inverse;
+
+    @include from('medium') {
+      font-size: $font-size-xxxl;
+    }
+
+    @include from('large') {
+      font-size: $font-size-xxxxl;
+    }
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: white;
+    margin: 0;
+    padding: $spacing-m;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: min($max-screen-width, 100%);
+  }
+}

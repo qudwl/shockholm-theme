@@ -118,6 +118,7 @@
 
       /* Set the transition for both the background-size and the text color */
       transition: background-size 0.4s ease-in-out, color 0.3s ease-in-out;
+      -webkit-text-stroke: 1px $color-orange-dark;
 
       &:hover,
       &:focus {

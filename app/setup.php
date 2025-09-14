@@ -139,6 +139,11 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Enable page excerpts.
+     */
+    add_post_type_support('page', 'excerpt');
 }, 20);
 
 /**

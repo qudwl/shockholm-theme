@@ -41,12 +41,6 @@
         max-width: min($max-screen-width, 100%);
         box-sizing: border-box;
         -webkit-text-stroke: 1px $color-text-inverse;
-        // text-shadow: longshadow(
-        //   color.adjust(white, $lightness: -30%),
-        //   white,
-        //   5,
-        //   0.5
-        // );
 
         @include from('medium') {
           font-size: $font-size-xxxl;

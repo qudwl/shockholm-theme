@@ -5,6 +5,7 @@
 @use './mixins.scss' as *;
 @use './home.scss' as *;
 @use './footer.scss' as *;
+@use './page.scss' as *;
 
 .app {
   display: flex;

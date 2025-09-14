@@ -83,6 +83,7 @@ section {
 
   > ul > li > a {
     color: $color-text;
+    -webkit-text-stroke: 0px;
   }
 
   .menu-toggle svg {
