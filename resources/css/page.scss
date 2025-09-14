@@ -3,7 +3,6 @@
 
 .page-landing-section {
   height: 800px;
-  max-height: 50vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,6 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include from('medium') {
+    max-height: 50vh;
+  }
 
   h1 {
     font-family: $font-display;

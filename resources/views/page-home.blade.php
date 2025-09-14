@@ -12,7 +12,7 @@
 
             @if ($is_local)
                 <section class="video-container" id="landing-section">
-                    <video tabindex="-1" controls class="landing-video" autoplay muted loop>
+                    <video tabindex="-1" controls class="landing-video" autoplay muted loop playsinline preload>
                         <source src="{{ esc_url($video_url) }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
