@@ -1,0 +1,55 @@
+@use './variables.scss' as *;
+@use 'sass:map';
+@use 'sass:color';
+
+// Mixin for media queries
+@mixin from($size) {
+  @if map.has-key($breakpoints, $size) {
+    $value: map.get($breakpoints, $size);
+    @media (min-width: $value) {
+      @content; // Pass the content into the media query block.
+    }
+  } @else {
+    @error "No value found for breakpoint: #{$size}";
+  }
+}
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+@function longshadow($start-color, $end-color, $steps, $opacity: 1) {
+  $shadow-list: ();
+
+  @for $i from 1 through $steps {
+    // Calculate the color mix for the current shadow step.
+    $weight: ($i - 1) / $steps * 100%;
+    $mixed-color: color.mix($end-color, rgba($start-color, $opacity), $weight);
+
+    // Append the new shadow to the list. Sass will handle the commas.
+    $shadow-list: append($shadow-list, #{$i}px #{$i}px $mixed-color, comma);
+  }
+
+  @return $shadow-list;
+}

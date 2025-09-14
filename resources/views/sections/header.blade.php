@@ -9,8 +9,10 @@
   @endif
 
   @if (function_exists('the_custom_logo') && has_custom_logo())
-    <img class="site-logo" src="{{ esc_url(wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]) }}"
-      alt="{{ get_bloginfo('name') }}">
+    <a href="/">
+      <img class="site-logo" src="{{ esc_url(wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]) }}"
+        alt="{{ get_bloginfo('name') }}">
+    </a>
   @else
     <a class="brand" href="{{ home_url('/') }}">
       {!! $siteName !!}
@@ -25,4 +27,6 @@
       'container' => false
     ]) !!}
   @endif
+
+  @include ('sections.header_menu_mobile')
 </header>

@@ -1,0 +1,71 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+@use 'sass:color';
+
+.home {
+  width: 100%;
+
+  .video-container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+
+    .landing-video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      &::-webkit-media-controls {
+        display: none;
+      }
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); // Adjust the opacity as needed
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: $font-display;
+        font-size: $font-size-xxl;
+        color: $color-orange;
+        padding: $spacing-m;
+        margin: 0;
+        text-align: center;
+        max-width: min($max-screen-width, 100%);
+        box-sizing: border-box;
+        -webkit-text-stroke: 1px $color-text-inverse;
+        // text-shadow: longshadow(
+        //   color.adjust(white, $lightness: -30%),
+        //   white,
+        //   5,
+        //   0.5
+        // );
+
+        @include from('medium') {
+          font-size: $font-size-xxxl;
+        }
+
+        @include from('large') {
+          font-size: $font-size-xxxxl;
+        }
+      }
+
+      p {
+        font-size: $font-size-lg;
+        color: white;
+        margin: 0;
+        padding: $spacing-m;
+        text-align: center;
+        box-sizing: border-box;
+        max-width: min($max-screen-width, 100%);
+      }
+    }
+  }
+}

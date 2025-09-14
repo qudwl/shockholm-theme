@@ -76,7 +76,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'footer_navigation' => __('Footer Navigation', 'sage'),
         'before_logo_navigation' => __('Before Logo Navigation', 'sage'),
         'after_logo_navigation' => __('After Logo Navigation', 'sage'),
     ]);
@@ -164,3 +164,4 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+

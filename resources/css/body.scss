@@ -1,0 +1,91 @@
+@use './mixins.scss' as *;
+@use './variables.scss' as *;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sr-only {
+  @include sr-only;
+}
+
+.btn,
+.wp-element-button {
+  font-family: $font-display;
+  font-size: $font-size-lg;
+  border-radius: 28px;
+  text-decoration: none;
+  color: $color-text;
+  background: $color-text-inverse;
+  padding: $spacing-m $spacing-l;
+  border: none;
+
+  &-primary {
+    color: $color-text-inverse;
+    background: $color-orange-dark;
+  }
+}
+
+.row {
+  margin: $spacing-m;
+  display: flex;
+  gap: $spacing-m;
+}
+
+p {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: $font-display;
+}
+
+.responsive-db-grid {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: $spacing-l;
+
+  @include from('medium') {
+    &-one {
+      grid-template-columns: 2fr 1fr !important;
+    }
+    &-two {
+      grid-template-columns: 1fr 2fr !important;
+    }
+  }
+
+  > div {
+    justify-content: center;
+    gap: $spacing-l;
+  }
+}
+
+section {
+  min-height: 50vh;
+}
+
+.disable-container-type {
+  container-type: initial !important;
+}
+
+.scrolled-past-landing {
+  background-color: $color-text-inverse;
+  padding-bottom: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  > ul > li > a {
+    color: $color-text;
+  }
+
+  .menu-toggle svg {
+    fill: $color-text !important;
+  }
+}

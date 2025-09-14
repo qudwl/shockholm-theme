@@ -4,6 +4,9 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
   base: '/wp-content/themes/shockholm-theme/public/',
+
+  publicDir: 'resources',
+
   plugins: [
     laravel({
       input: [
@@ -24,6 +27,7 @@ export default defineConfig({
       disableTailwindFonts: true,
       disableTailwindFontSizes: true,
     }),
+
   ],
   resolve: {
     alias: {
