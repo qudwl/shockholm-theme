@@ -101,8 +101,9 @@
     margin: 0;
 
     a {
-      font-family: $font-display;
+      font-family: $font-body; // changed from $font-display
       color: $color-text-inverse;
+      font-weight: 700;
       text-decoration: none;
       font-size: $font-size-lg;
       /* Prepare the orange gradient background */
@@ -118,7 +119,7 @@
 
       /* Set the transition for both the background-size and the text color */
       transition: background-size 0.4s ease-in-out, color 0.3s ease-in-out;
-      -webkit-text-stroke: 1px $color-orange-dark;
+      // -webkit-text-stroke: 1px $color-orange-dark;
 
       &:hover,
       &:focus {
